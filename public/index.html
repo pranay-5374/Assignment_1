@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocStore</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+       
+            <!-- Content -->
+
+            <div id="content" class="col-md-9 col-lg-9 px-md-12">
+                <div >
+                    <div class="container text-center">
+                        <h3>Upload Your File</h3>
+                        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="category" id="form-category">
+                            <div class="form-group">
+                                <label for="file">Select a file:</label>
+                                <input type="file" name="file" id="file" class="form-control-file">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                            
+                        </form>
+                        <button id="retrieveButton" class="btn btn-primary">Retrieve</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.1167.0/aws-sdk.min.js"></script>
+    <script>
+        const retrieveButton = document.getElementById("retrieveButton");
+
+// Add a click event listener to the button
+retrieveButton.addEventListener("click", function() {
+  // Navigate to the /retrievefiles route
+  window.location.href = "/retrievefiles";
+});
+    </script>
+</body>
+</html>
